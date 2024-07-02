@@ -20,3 +20,7 @@ class TestIsinstance(TestCase):
         def foo(): pass
         with mk.patch.object(functools, "partial", autospec=True):
             inspect.signature(foo)
+
+            inspect.signature(self.test_mk)
+            def bar(x: int) -> None: pass
+            inspect.get_annotations(bar, eval_str=True)
