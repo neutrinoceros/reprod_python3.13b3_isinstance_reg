@@ -1,9 +1,17 @@
 import inspect
 import functools
+from unittest import TestCase
+import unittest.mock as mk
 
-isinstance(1, functools.partial)
 
-def foo(): pass
-isinstance(foo, functools.partial)
+class TestIsinstance(TestCase):
+    def test_int(self):
+        isinstance(1, functools.partial)
 
-inspect.signature(foo)
+    def test_func(self):
+        def foo(): pass
+        isinstance(foo, functools.partial)
+
+    def test_signature(self):
+        def foo(): pass
+        inspect.signature(foo)
