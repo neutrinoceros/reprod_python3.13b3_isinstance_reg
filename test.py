@@ -15,3 +15,8 @@ class TestIsinstance(TestCase):
     def test_signature(self):
         def foo(): pass
         inspect.signature(foo)
+
+    def test_mk(self):
+        def foo(): pass
+        with mk.patch.object(functools, "partial", autospec=True):
+            inspect.signature(foo)
