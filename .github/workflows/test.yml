@@ -6,6 +6,7 @@ jobs:
   tests:
     name: ${{matrix.os}} w/ py${{matrix.python-version}}
     strategy:
+      fail-fast: false
       matrix:
         os:
         - ubuntu-latest
