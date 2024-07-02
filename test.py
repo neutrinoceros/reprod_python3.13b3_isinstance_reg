@@ -1,9 +1,9 @@
 import inspect
-from functools import partial
+import functools
 
-isinstance(1, partial)
+isinstance(1, functools.partial)
 
 def foo(): pass
-isinstance(foo, partial)
+isinstance(foo, functools.partial)
 
 inspect.signature(foo)
